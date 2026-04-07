@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI CRM - Log Interaction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>AI CRM – HCP Log Interaction</h1>
+    <p class="subtitle">Log HCP interactions via chat or structured form</p>
+
+    <div class="mode-toggle">
+      <button id="chatModeBtn" class="active">Chat Mode</button>
+      <button id="formModeBtn">Form Mode</button>
+    </div>
+
+    <!-- Chat Mode -->
+    <div id="chatSection" class="card">
+      <h2>Conversational Logging</h2>
+      <textarea id="chatInput" placeholder="Example: Met Dr. Sharma today and discussed insulin. He was interested but concerned about pricing."></textarea>
+      <button id="extractBtn">Extract with AI</button>
+
+      <div id="chatResult" class="result-box hidden">
+        <h3>AI Extracted Data</h3>
+        <pre id="aiOutput"></pre>
+      </div>
+    </div>
+
+    <!-- Form Mode -->
+    <div id="formSection" class="card hidden">
+      <h2>Structured Form</h2>
+      <div class="form-grid">
+        <input type="text" id="hcp_name" placeholder="HCP Name" />
+        <input type="text" id="interaction_type" placeholder="Interaction Type (Visit/Call)" />
+        <input type="text" id="product" placeholder="Product Discussed" />
+        <input type="text" id="sentiment" placeholder="Sentiment" />
+        <textarea id="notes" placeholder="Notes"></textarea>
+        <textarea id="concerns" placeholder="Concerns"></textarea>
+        <textarea id="follow_up" placeholder="Follow-up"></textarea>
+      </div>
+      <button id="saveBtn">Save Interaction</button>
+    </div>
+
+    <!-- View Logs -->
+    <div class="card">
+      <h2>Recent Interactions</h2>
+      <button id="loadLogsBtn">Load Logs</button>
+      <div id="logsContainer"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
